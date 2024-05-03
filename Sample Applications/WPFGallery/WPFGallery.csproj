@@ -25,10 +25,10 @@
 	</ItemGroup>
 	
 	<PropertyGroup>
-		<!--<WpfRepoRoot>E:\repos\wpf</WpfRepoRoot>-->
+		<WpfRepoRoot>E:\repos\wpf</WpfRepoRoot>
 		<ApplicationIcon>Assets\WPFGallery-Icon.ico</ApplicationIcon>
 	</PropertyGroup>
-	<!--<Import Project="$(WpfRepoRoot)\eng\wpf-debug.targets" />-->
+	<Import Project="$(WpfRepoRoot)\eng\wpf-debug.targets" />
 	<ItemGroup>
 	  <None Remove="Models\IconsData.json" />
 	</ItemGroup>
