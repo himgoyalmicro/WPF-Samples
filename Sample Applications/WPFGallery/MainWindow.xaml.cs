@@ -179,15 +179,20 @@ public partial class MainWindow : Window
                 tvi.IsExpanded = true;
                 tvi.BringIntoView();
             }
+
+            SearchComboBox.ItemsSource = ViewModel.NavigationItemsForSearchBox;
+            SearchComboBox.SelectedItem = null;
         }
-        SearchComboBox.ItemsSource = ViewModel.NavigationItemsForSearchBox;
+
         SearchComboBox.IsDropDownOpen = false;
         Keyboard.ClearFocus();
     }
 
     private void SearchComboBox_TextChanged(object sender, TextChangedEventArgs e)
     {
+        Task.Delay(300);
         string searchText = (sender as ComboBox).Text;
+        SearchComboBox.IsDropDownOpen = true;
         SearchComboBox.ItemsSource = ViewModel.NavigationItemsForSearchBox.Where(item => item.Name.Contains(searchText));
     }
 
