@@ -75,6 +75,12 @@ public partial class MainWindow : Window
         {
             _navigationService.Navigate(navItem.PageType);
 
+            var tvi = ControlsList.ItemContainerGenerator.ContainerFromItem(navItem) as TreeViewItem;
+            if (tvi != null)
+            {
+                tvi.IsExpanded = true;
+                tvi.BringIntoView();
+            }
         }
     }
 
